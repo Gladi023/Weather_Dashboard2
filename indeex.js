@@ -11,4 +11,32 @@ const weather = {
           }
           return response.json();
         })
-    }}
+        .then(data => this.displayWeather(data))
+        .catch(error => console.error(error));
+    },
+    displayWeather({ name, weather, main }) {
+      const [{ description }] = weather;
+      const { temp, humidity } = main;
+      document.querySelector(".city").innerText = `Weather in ${name}`;
+      document.querySelector(".description").innerText = description;
+      document.querySelector(".temp").innerText = `${temp}°C`;
+      document.querySelector(".humidity").innerText =
+        `Humidity: ${humidity}%`;
+      document.querySelector(".weather").classList.remove("loading");
+    },
+    search() {
+      this.fetchWeather(document.querySelector(".search-bar").value);
+    },
+  };
+  
+  const searchButton = document.querySelector(".search button");
+  searchButton.addEventListener("click", () => weather.search());
+  
+  const searchBar = document.querySelector(".search-bar");
+  searchBar.addEventListener("keyup", event => {
+    if (event.key === "Enter") {
+      weather.search();
+    }
+  });
+  
+  weather.fetchWeather("Stanford");
