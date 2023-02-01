@@ -5,7 +5,6 @@ Usage
 Credits
 License
 
-
 ## Installation
 Deploy the website and navigate through the website.
 
