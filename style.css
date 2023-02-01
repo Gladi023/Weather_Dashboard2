@@ -10,13 +10,22 @@ header {
     display: flex;
     background-color: #d53f3f;
 }
-
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
 
 main {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+
+   
 }
-.city {
+.citybox {
     width: 300px;
     margin: 1rem;
     background-color: #d53f3f;
@@ -26,11 +35,11 @@ main {
     border-radius: 10px;
 }
 
-.city img {
+.citybox img {
     width: 100%;
 }
 
-.city-info {
+.city {
     color:aliceblue;
     display: flex;
     align-items: center;
@@ -39,7 +48,7 @@ main {
     letter-spacing: 0.5px;
 }
 
-.city-info h3 {
+.city h3 {
     margin-top: 0;
 }
 .overview {
@@ -53,6 +62,10 @@ main {
     transform: translateY(101%);
     transition: transform 0.3s ease-in;
 }
-.city:hover .overview {
+.citybox:hover .overview {
     transform: translateY(0);
+}
+.img {
+    max-width: 4em;
+    max-height: 4em;
 }
